@@ -21,7 +21,9 @@ This repository is just meant as a way to store the exercises contained in "Prog
 2. Parenthesise the following numeric expressions:
 
     `2^3*4`
+
     `2*3+4*5`
+
     `2+3*4^5`
 
 3. The script below contains three syntactic errors. Correct theses errors and then check that your script works properly using GHCi.
@@ -42,26 +44,39 @@ This repository is just meant as a way to store the exercises contained in "Prog
 1. What are the types of the following values ?
 
     `['a','b','c']`
+
     `('a', 'b', 'c')`
+
     `[(False, '0'),(True, '1')]`
+
     `([False, True],['0', '1'])`
+
     `[tail, init, reverse]`
 
 2. Write down definitions that have the following types; it does not matter what the definitions actually do as long as they are type correct.
 
     `bools :: [Bool]`
+
     `nums :: [[Int]]`
+
     `add :: Int -> Int -> Int -> Int`
+
     `copy :: a -> (a,a)`
+
     `apply :: (a -> b) -> a -> b`
 
 3. What are the types of the following functions ?
 
     `second xs = head (tail xs)`
+
     `swap (x,y) = (y,x)`
+
     `pair x y = (x,y)`
+
     `double x = x*2`
+
     `palindrome xs = reverse xs == xs`
+
     `twice f x = f (f x)`
 
     Hint: take care to include the necessary class constaints in the types if the functions are defined using overloaded operators.
