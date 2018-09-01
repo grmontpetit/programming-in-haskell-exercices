@@ -49,7 +49,7 @@ load chapter1/chapter1.hs
             | otherwise      = 0
     ```
 
-    Another solution with pattern matching and guarged equations:
+    Another solution with pattern matching and guarded equations:
 
     ```haskell
     prod2 [] = 0
@@ -79,7 +79,7 @@ load chapter1/chapter1.hs
                        larger  = [b | b <- xs, b > x]
     ```
 
-5. What would be the effect of replacing <= by < in the original definition of `qsort` ? Hint: Consider the example `qsort [2,2,3,1,1]`
+5. What would be the effect of replacing `<=` by `<` in the original definition of `qsort` ? Hint: Consider the example `qsort [2,2,3,1,1]`
 
     Original `qsort` definition:
 
@@ -108,7 +108,7 @@ load chapter1/chapter1.hs
     [1,2,3]
     ```
 
-    We can see that any duplicated values are removed. This happens because when x is equal to a, we don't keep that value inside the local definition of mqsort.
+    We can see that any duplicated values are removed. This happens because when x is equal to a, we don't keep that value inside the local definition of `mqsort`.
 
 ## Chapter 2
 
@@ -209,9 +209,9 @@ load chapter1/chapter1.hs
 
     ```haskell
     n = a `div` length xs
-    where
-        a = 10
-        xs = [1,2,3,4,5]
+        where
+            a = 10
+            xs = [1,2,3,4,5]
     ```
 
 4. The library function `last` selects the last element of a non-empty list; for example, `last [1,2,3,4,5] = 5`. Show how the function `last` could be defined in terms of the other library functions introduced in this chapter. Can you think of another possible definition ?
