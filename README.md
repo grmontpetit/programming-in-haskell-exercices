@@ -320,3 +320,14 @@ load chapter1/chapter1.hs
 5. Why is it not feasible in general for function types to be instances of the `Eq` class ? Hint: two functions of the same type are equal if they always return equal results for equal arguments.
 
     I would assume that's because the arguments change the type of the functions because type inference. In other words, functions are too generic to be able to compare their types. If we look at the function `init`, it can be applied to a list of `Int` as well as a list of `Char`; the definition would be `[a] -> [a]`, this would not be possible because `a` could be an `Int` or a `Char`.
+
+## Chapter 4
+Chapter content:
+
+- Conditional expressions
+- Guarded equations
+- Pattern matching
+- Lambda expressions
+- Operator sections
+
+[Exercices](chapter4/chapter4.md)
