@@ -34,11 +34,11 @@
 
     `pair x y = (x,y)` -> `t1 -> t -> (t, t1)`
 
-    -- I think this function's argument are inferred because of the multiplcation sign
+    I think this function's argument are inferred because of the multiplcation sign:
 
     `double x = x*2` -> `Num a => a -> a`
 
-    -- this one confused me a little bit
+    this one confused me a little bit:
 
     `palindrome xs = reverse xs == xs` -> `Eq a => [a] -> Bool`
 

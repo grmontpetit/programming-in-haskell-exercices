@@ -73,7 +73,9 @@ Using `luhnDouble` and the integer remainder function `mod`, define a function `
     ```GHCi
     > luhn 1 7 8 4
     True
+    ```
 
+    ```GHCi
     > luhn 4 7 8 3
     False
     ```

@@ -1,8 +1,6 @@
 # programming-in-haskell-exercices
 This repository is just meant as a way to store the exercises contained in "Programming in Haskell" by Graham Hutton (2nd edition).
 
-Note: Code blocks with **haskell** mean that it was loaded inside a haskell script (`.hs` file) while code blocks with **GHCi** means it was evaluated with the interactive prompt `ghci`.
-
 ## Chapter 1
 Chapter content:
 
