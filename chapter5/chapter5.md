@@ -10,3 +10,17 @@
     > grid 1 2
     [(0,0),(0,1),(0,2),(1,0),(1,1),(1,2)]
     ```
+
+3. Using a list comprehension and the function `grid` above, define a function `square :: Int -> [(Int,Int)]` that returns a coordinate square of size *n*, excluding the diagonal from (0,0) to (n,n). For example:
+
+    ```GHCi
+    > square 2
+    [(0,1),(0,2),(1,0),(1,2),(2,0),(2,1)]
+    ```
+
+4. In a similar way to the function `length`, show how the library function `replicate :: Int -> a -> [a]` that produces a list of identical elements can be defined using a list comprehension. For example:
+
+    ```GHCi
+    > replicate 3 True
+    [True,True,True]
+    ```
