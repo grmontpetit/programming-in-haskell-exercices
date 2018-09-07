@@ -47,3 +47,13 @@ Chapter content:
 - Operator sections
 
 [Exercices](chapter4/chapter4.md)
+
+## Chapter 5
+Chapter content:
+
+- Guards
+- The `zip` function
+- String comprehensions
+- The Caesar cipher
+
+[Exercices](chapter5/chapter5.md)
