@@ -43,11 +43,11 @@
 
 8. Redefine the function `positions` using the function `find`.
 
-9. The *scala product* of two lists of integers *xs* and *ys* of length *n* is given by the sum of the products of corresponding integers:
+9. The *scalar product* of two lists of integers *xs* and *ys* of length *n* is given by the sum of the products of corresponding integers:
 
     <a href="https://www.codecogs.com/eqnedit.php?latex=\sum_{i=0}^{n-1}&space;(xs_{i}&space;*&space;ys_{i})" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\sum_{i=0}^{n-1}&space;(xs_{i}&space;*&space;ys_{i})" title="\sum_{i=0}^{n-1} (xs_{i} * ys_{i})" /></a>
 
-In a similar manner to `chisqr`, show how a list comprehension can be used to define a function `scalaproduct :: [Int] -> [Int] -> Int` that returns the scalar product of two lists. For example:
+    In a similar manner to `chisqr`, show how a list comprehension can be used to define a function `scalaproduct :: [Int] -> [Int] -> Int` that returns the scalar product of two lists. For example:
 
     ```GHCi
     > scalarproduct [1,2,3] [4,5,6]
