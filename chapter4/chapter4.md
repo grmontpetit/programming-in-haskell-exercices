@@ -9,23 +9,72 @@
     ([1,2,3],[4,5,6])
     ```
 
+    ```haskell
+    halve [] = ([],[])
+    halve xs | length xs `mod` 2 == 0 = splitAt (length xs `div` 2) xs
+             | otherwise              = error "list is uneven."
+    ```
+
 2. Defined a function `third :: [a] -> a` that returns the third element in a list that contains at least this many elements using:
 
     a. `head` and `tail`;
 
-    b. list indexing `!!`;
+    ```haskell
+    third1 :: [a] -> a
+    third1 xs = head (tail (tail xs))
+    ```
 
+    b. list indexing `!!`;
+    ```haskell
+    third2 :: [a] -> a
+    third2 xs = xs !! 2
+    ```
     c. pattern matching.
+
+    ```haskell
+    third3 :: [a] -> a
+    third3 (_:_:x:_) = x
+    ```
 
 3. Consider a function `safetail :: [a] -> [a]` that behaves in the same way as `tail` except that it maps the empty list to itself rather than producing an error. Using `tail` and the function `null :: [a] -> Bool` that decides if a list is empty or not, define `safetail` using:
 
     a. A conditional expression;
 
+    ```haskell
+    safetail :: [a] -> [a]
+    safetail xs = if length xs == 0 then xs else tail xs
+    ```
+
     b. guarded equations;
+
+    ```haskell
+    safetail2 :: [a] -> [a]
+    safetail2 xs | null xs = xs
+                 | otherwise = tail xs
+    ```
 
     c. pattern matching.
 
+    ```haskell
+    safetail3 :: [a] -> [a]
+    safetail3 (x:xs) = xs
+    safetail3 (null) = []
+    ```
+
 4. In a similar way to `&&` in section 4.4, show how the disjunction operator `||` can be defined in four different ways using pattern matching.
+
+    ```haskell
+    True || False  = True
+    True || True   = True
+    False || True  = True
+    False || False = False
+    ```
+
+    The above can be simplified with:
+    ```haskell
+    False || False = False
+    _ || _         = True
+    ```
 
 5. Without using any other library functions or operators, show how the meaning of the following pattern matching definition for logical conjunction `&&` can be formalized using conditional expressions:
 

@@ -2,9 +2,9 @@
 
 ### Exercices
 
-1. Using list comprehension, give an expression that calculates the sum 1^2 + 2^2 + ... + 100^2 of the first one hundred integer squares.
+1. Using list comprehension, give an expression that calculates the sum <a href="https://www.codecogs.com/eqnedit.php?latex=1^2&space;&plus;&space;2^2&space;&plus;&space;...&space;&plus;&space;100^2" target="_blank"><img src="https://latex.codecogs.com/gif.latex?1^2&space;&plus;&space;2^2&space;&plus;&space;...&space;&plus;&space;100^2" title="1^2 + 2^2 + ... + 100^2" /></a> of the first one hundred integer squares.
 
-2. Suppose that a *coordinate grid of size m * n* is given by the list of all pairs (x,y) of integers such that 0 <= x <= m and 0 <= y <= n. Using a list comprehension, define a function `grid :: Int -> Int -> [(Int, Int)]` that returns a coordinate grid of a given *size*. For example:
+2. Suppose that a *coordinate grid of size m * n* is given by the list of all pairs (x,y) of integers such that <a href="https://www.codecogs.com/eqnedit.php?latex=0&space;\leq&space;x&space;\leq&space;m" target="_blank"><img src="https://latex.codecogs.com/gif.latex?0&space;\leq&space;x&space;\leq&space;m" title="0 \leq x \leq m" /></a> and <a href="https://www.codecogs.com/eqnedit.php?latex=0&space;\leq&space;y&space;\leq&space;n" target="_blank"><img src="https://latex.codecogs.com/gif.latex?0&space;\leq&space;y&space;\leq&space;n" title="0 \leq y \leq n" /></a>. Using a list comprehension, define a function `grid :: Int -> Int -> [(Int, Int)]` that returns a coordinate grid of a given *size*. For example:
 
     ```GHCi
     > grid 1 2
@@ -25,7 +25,7 @@
     [True,True,True]
     ```
 
-5. A triple *(x,y,z)* of positive integers is *Pythagorean* if it satisfies the equation *x^2 + y^2 = z^2*. Using a list comprehension with three generators, define a function `pyths :: Int -> [(Int,Int,Int)]` that returns the list of all such triples whose components are at most a given limit. For example:
+5. A triple *(x,y,z)* of positive integers is *Pythagorean* if it satisfies the equation <a href="https://www.codecogs.com/eqnedit.php?latex=x^2&space;&plus;&space;y^2&space;=&space;z^2" target="_blank"><img src="https://latex.codecogs.com/gif.latex?x^2&space;&plus;&space;y^2&space;=&space;z^2" title="x^2 + y^2 = z^2" /></a>. Using a list comprehension with three generators, define a function `pyths :: Int -> [(Int,Int,Int)]` that returns the list of all such triples whose components are at most a given limit. For example:
 
     ```GHCi
     > pyths 10
