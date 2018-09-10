@@ -147,13 +147,15 @@
     - add all the resulting numbers together;
     - if the total is divisible by 10, the card number is valid.
 
-defined a function `luhnDouble :: Int -> Int` that doubles a digit and subtracts 9 if the result is greater than 9. For example:
+    defined a function `luhnDouble :: Int -> Int` that doubles a digit and subtracts 9 if the result is greater than 9. For example:
+
     ```GHCi
     > luhnDouble 3
     6
     > luhnDouble 6
     3
     ```
+
     ```haskell
     luhnDouble :: Int -> Int
     luhnDouble x | double x > 9 = double x - 9
@@ -161,15 +163,18 @@ defined a function `luhnDouble :: Int -> Int` that doubles a digit and subtracts
     double = (*2)
     ```
 
-Using `luhnDouble` and the integer remainder function `mod`, define a function `luhn :: Int -> Int -> Int -> Int -> Bool` that decides if a four-digit bank card number is valid. For example:
+    Using `luhnDouble` and the integer remainder function `mod`, define a function `luhn :: Int -> Int -> Int -> Int -> Bool` that decides if a four-digit bank card number is valid. For example:
+
     ```GHCi
     > luhn 1 7 8 4
     True
     ```
+
     ```GHCi
     > luhn 4 7 8 3
     False
     ```
+
     ```haskell
     luhn :: Int -> Int -> Int -> Int -> Bool
     luhn = \a -> \b -> \c -> \d -> (luhnDouble a + b + luhnDouble c + d) `mod` 10 == 0
