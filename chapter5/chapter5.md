@@ -4,11 +4,31 @@
 
 1. Using list comprehension, give an expression that calculates the sum <a href="https://www.codecogs.com/eqnedit.php?latex=1^2&space;&plus;&space;2^2&space;&plus;&space;...&space;&plus;&space;100^2" target="_blank"><img src="https://latex.codecogs.com/gif.latex?1^2&space;&plus;&space;2^2&space;&plus;&space;...&space;&plus;&space;100^2" title="1^2 + 2^2 + ... + 100^2" /></a> of the first one hundred integer squares.
 
+    My solution:
+
+    ```haskell
+    sumint :: Int
+    sumint = sum numbers
+
+    numbers :: [Int]
+    numbers = [square x | x <- [1..100]]
+
+    square :: Int -> Int
+    square = (^2)
+    ```
+
 2. Suppose that a *coordinate grid of size m * n* is given by the list of all pairs (x,y) of integers such that <a href="https://www.codecogs.com/eqnedit.php?latex=0&space;\leq&space;x&space;\leq&space;m" target="_blank"><img src="https://latex.codecogs.com/gif.latex?0&space;\leq&space;x&space;\leq&space;m" title="0 \leq x \leq m" /></a> and <a href="https://www.codecogs.com/eqnedit.php?latex=0&space;\leq&space;y&space;\leq&space;n" target="_blank"><img src="https://latex.codecogs.com/gif.latex?0&space;\leq&space;y&space;\leq&space;n" title="0 \leq y \leq n" /></a>. Using a list comprehension, define a function `grid :: Int -> Int -> [(Int, Int)]` that returns a coordinate grid of a given *size*. For example:
 
     ```GHCi
     > grid 1 2
     [(0,0),(0,1),(0,2),(1,0),(1,1),(1,2)]
+    ```
+
+    My solution:
+
+    ```haskell
+    grid :: Int -> Int -> [(Int, Int)]
+    grid n m = [(x, y) | x <- [0..n], y <- [0..m]]
     ```
 
 3. Using a list comprehension and the function `grid` above, define a function `square :: Int -> [(Int,Int)]` that returns a coordinate square of size *n*, excluding the diagonal from (0,0) to (n,n). For example:
