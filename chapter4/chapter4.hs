@@ -32,6 +32,26 @@ True || False  = True
 True || True   = True
 False || True  = True
 False || False = False
--- _ || _         = True
 
-(&&): Bool -> Bool -> Bool
+(&&) :: Bool -> Bool -> Bool
+(&&) x y = if x then y else False
+
+--    True && b = b
+--    False && _ = False
+and :: Bool -> Bool -> Bool
+and a b = if a then b else False
+
+add :: Int -> Int -> Int
+add = \x -> \y -> x + y
+
+mult :: Int -> Int -> Int -> Int
+mult = \x -> \y -> \z -> x * y * z
+
+luhnDouble :: Int -> Int
+luhnDouble x | double x > 9 = double x - 9
+             | otherwise    = double x
+
+double = (*2)
+
+luhn :: Int -> Int -> Int -> Int -> Bool
+luhn = \a -> \b -> \c -> \d -> (luhnDouble a + b + luhnDouble c + d) `mod` 10 == 0

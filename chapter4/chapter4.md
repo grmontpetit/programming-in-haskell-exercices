@@ -70,20 +70,45 @@
     False || False = False
     ```
 
-    The above can be simplified with:
     ```haskell
     False || False = False
     _ || _         = True
     ```
 
+    ```haskell
+    False || b = b
+    True  || _ = True
+    ```
+
+    ```haskell
+    b || c | b == c = b
+           | otherwise True
+    ```
+
 5. Without using any other library functions or operators, show how the meaning of the following pattern matching definition for logical conjunction `&&` can be formalized using conditional expressions:
 
     ```haskell
-    True && False = True
+    True && True = True
     _    && _     = False
     ```
 
     Hint: Use two nested conditional expressions.
+
+    ```haskell
+    (&&) :: Bool -> Bool -> Bool
+    (&&) x y = if x then y else False
+    ```
+
+    ```GHCi
+    *Main> True Main.&& False
+    False
+    *Main> True Main.&& True
+    True
+    *Main> False Main.&& True
+    False
+    *Main> False Main.&& False
+    False
+    ```
 
 6. Do the same for the following alternative definition, and note the difference in the number of conditional expressions that are required:
 
@@ -92,11 +117,26 @@
     False && _ = False
     ```
 
+    I am not sure I understand the pertinence of theses exercices.
+
+    ```haskell
+    --    True && b = b
+    --    False && _ = False
+    and :: Bool -> Bool -> Bool
+    and a b = if a then b else False
+    ```
+
 7. Show how the meaning of the following curried function definition can be formalized in terms of lambda expressions:
 
-    ```
+    ```haskell
     mult :: Int -> Int -> Int -> Int
     mult x y z = x*y*z
+    ```
+
+    I think this is what the author expects ?:
+
+    ```haskell
+    mult = \x -> \y -> \z -> x * y * z
     ```
 
 8. The *luhn algorithm* is used to check bank card numbers for simple errors such as mistyping a digit, and proceeds as follows:
@@ -107,14 +147,22 @@
     - add all the resulting numbers together;
     - if the total is divisible by 10, the card number is valid.
 
-defined a function `luhn double :: Int -> Int` that doubles a digit and subtracts 9 if the result is greater than 9. For example:
+defined a function `luhnDouble :: Int -> Int` that doubles a digit and subtracts 9 if the result is greater than 9. For example:
 
     ```GHCi
     > luhnDouble 3
     6
 
-    > luhnDouble6
+    > luhnDouble 6
     3
+    ```
+
+    ```haskell
+    luhnDouble :: Int -> Int
+    luhnDouble x | double x > 9 = double x - 9
+                 | otherwise    = double x
+
+    double = (*2)
     ```
 
 Using `luhnDouble` and the integer remainder function `mod`, define a function `luhn :: Int -> Int -> Int -> Int -> Bool` that decides if a four-digit bank card number is valid. For example:
@@ -127,6 +175,25 @@ Using `luhnDouble` and the integer remainder function `mod`, define a function `
     ```GHCi
     > luhn 4 7 8 3
     False
+    ```
+
+    ```haskell
+    luhn :: Int -> Int -> Int -> Int -> Bool
+    luhn = \a -> \b -> \c -> \d -> (luhnDouble a + b + luhnDouble c + d) `mod` 10 == 0
+    ```
+
+
+    Here is my full solution:
+
+    ```haskell
+    luhnDouble :: Int -> Int
+    luhnDouble x | double x > 9 = double x - 9
+                 | otherwise    = double x
+
+    double = (*2)
+
+    luhn :: Int -> Int -> Int -> Int -> Bool
+    luhn = \a -> \b -> \c -> \d -> (luhnDouble a + b + luhnDouble c + d) `mod` 10 == 0
     ```
 
 In the exercices for chapter 7 we will consider a more general version of this function that accepts card number of any length.
